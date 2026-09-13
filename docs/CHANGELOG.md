@@ -6,6 +6,14 @@
 
 ## Unreleased
 
+- Hid the mosquito and red tongue in Buzz Off standby and immediately after stopping. Catch animation and score now advance only while RUNNING; restarting begins at the first animation frame.
+
+- Added an approximately one-second, public-domain USGS American bullfrog recording during RUNNING on every second mosquito catch. The active PCM tone is ducked and codec volume rises from 35 to 55 only during the call, then returns to 35; the call stops with the feature, and standby music is unchanged. Added host tests and an audible preview.
+
+- Replaced Buzz Off's upstream sky, grass, robot, and panel UI with a dark Japanese pixel-handheld layout. Added a Flash-resident 16-color wetland scene and closed/open-mouth frog animation, compact battery and control indicators, and a matching boot palette. Removed the startup I²C address sweep and show `READY!` only after initialization; audio and button behavior are unchanged.
+
+- Added Buzz Off, a boot-to-app pixel frog animation with three selectable PCM tones (12, 16, and 20 kHz), button controls, a catch counter, and host tests. A top-down handheld-style startup prints CLOUDFINGER; an original 8-bit background melody plays during boot and standby, stops for the active tone, and resumes when it stops. Acoustic output and mosquito response require device measurements.
+
 - Added the supplied 80-byte CW2017 profile for the specified 520 mAh cell, including content/update-flag checks, verified writes, the required restart sequence, and bounded SOC-readiness polling.
 
 - Expanded the environment bootstrap document: added Espressif's Git service mirror (`git.espressif.com.cn`) as the preferred mainland-China route for ESP-IDF v5.5.3 and its submodules, documented submodule long-wait/timeout handling, in-place repair, and the pinned-commit shallow fetch for large submodules such as `esp32-wifi-lib`, warned about stale per-repository Jihulab `insteadOf` residue, and added the official offline release archive as a last-resort fallback (learned from `esp-mosaico/esp-mosaico-vibe`).

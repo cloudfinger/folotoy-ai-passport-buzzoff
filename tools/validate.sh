@@ -28,6 +28,30 @@ run_static_checks() {
         tests/test_ui_pixel_math.c main/ui_pixel_math.c \
         -o "${test_dir}/test_ui_pixel_math"
     "${test_dir}/test_ui_pixel_math"
+    "${CC:-cc}" -std=c11 -Wall -Wextra -Werror -Imain \
+        tests/test_buzzoff_logic.c main/buzzoff_logic.c \
+        -o "${test_dir}/test_buzzoff_logic"
+    "${test_dir}/test_buzzoff_logic"
+    "${CC:-cc}" -std=c11 -Wall -Wextra -Werror -Imain \
+        tests/test_buzzoff_tone.c main/buzzoff_tone.c \
+        -o "${test_dir}/test_buzzoff_tone"
+    "${test_dir}/test_buzzoff_tone"
+    "${CC:-cc}" -std=c11 -Wall -Wextra -Werror -Imain \
+        tests/test_buzzoff_boot.c main/buzzoff_boot.c \
+        -o "${test_dir}/test_buzzoff_boot"
+    "${test_dir}/test_buzzoff_boot"
+    "${CC:-cc}" -std=c11 -Wall -Wextra -Werror -Imain \
+        tests/test_buzzoff_music.c main/buzzoff_music.c \
+        -o "${test_dir}/test_buzzoff_music"
+    "${test_dir}/test_buzzoff_music"
+    "${CC:-cc}" -std=c11 -Wall -Wextra -Werror -Imain \
+        tests/test_buzzoff_croak.c main/buzzoff_croak.c \
+        -o "${test_dir}/test_buzzoff_croak"
+    "${test_dir}/test_buzzoff_croak"
+    "${CC:-cc}" -std=c11 -Wall -Wextra -Werror -Imain \
+        tests/test_buzzoff_recording.c main/buzzoff_bullfrog_pcm.c \
+        -o "${test_dir}/test_buzzoff_recording"
+    "${test_dir}/test_buzzoff_recording"
     python3 tests/test_verify_firmware.py
     rm -rf "${test_dir}"
     echo "Host tests: PASS"
