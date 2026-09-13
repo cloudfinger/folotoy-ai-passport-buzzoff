@@ -223,6 +223,7 @@ static void animation_tick(lv_timer_t *timer)
         }
         return;
     }
+    bool was_running = s_state.running;
     consume_input();
     if (atomic_load(&s_audio_failed) && !s_audio_error_shown) {
         s_state.running = false;
@@ -230,7 +231,7 @@ static void animation_tick(lv_timer_t *timer)
         render_labels();
     }
 
-    buzzoff_state_advance(&s_state);
+    buzzoff_state_advance_render_frame(&s_state, was_running);
     buzzoff_frame_t frame = buzzoff_frame(&s_state);
     if (buzzoff_croak_due(&s_state)) atomic_fetch_add(&s_croak_triggers, 1U);
     render_frog(s_state.running && (frame.chewing || frame.tongue_len > 0U));

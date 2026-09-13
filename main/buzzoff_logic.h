@@ -33,6 +33,8 @@ void buzzoff_state_key(buzzoff_state_t *state, buzzoff_key_t key);
 void buzzoff_state_apply_keys(buzzoff_state_t *state, const buzzoff_key_t *keys,
                               size_t count, uint32_t ok_clicks);
 void buzzoff_state_advance(buzzoff_state_t *state);
+/* Skip the first advance after START so the initial frame is rendered once. */
+void buzzoff_state_advance_render_frame(buzzoff_state_t *state, bool was_running);
 bool buzzoff_croak_due(const buzzoff_state_t *state);
 uint32_t buzzoff_frequency_hz(const buzzoff_state_t *state);
 buzzoff_frame_t buzzoff_frame(const buzzoff_state_t *state);

@@ -97,6 +97,29 @@ static void test_idle_and_stop_hide_hunt_and_freeze_score(void)
     assert(state.eaten == 1);
 }
 
+static void test_render_step_shows_start_frame_before_advancing(void)
+{
+    buzzoff_state_t state;
+    buzzoff_state_init(&state);
+
+    bool was_running = state.running;
+    buzzoff_state_key(&state, BUZZOFF_KEY_OK);
+    buzzoff_state_advance_render_frame(&state, was_running);
+    assert(state.tick == 0);
+    assert(buzzoff_frame(&state).mosquito_x == 206);
+
+    was_running = state.running;
+    buzzoff_state_advance_render_frame(&state, was_running);
+    assert(state.tick == 1);
+    assert(buzzoff_frame(&state).mosquito_x == 203);
+
+    was_running = state.running;
+    buzzoff_state_key(&state, BUZZOFF_KEY_OK);
+    buzzoff_state_advance_render_frame(&state, was_running);
+    assert(state.tick == 0);
+    assert(!buzzoff_frame(&state).mosquito_visible);
+}
+
 static void test_batched_button_input(void)
 {
     buzzoff_state_t state;
@@ -172,6 +195,7 @@ int main(void)
     test_controls();
     test_frog_animation();
     test_idle_and_stop_hide_hunt_and_freeze_score();
+    test_render_step_shows_start_frame_before_advancing();
     test_batched_button_input();
     test_order_is_preserved_at_boundaries();
     test_croak_every_second_running_catch();

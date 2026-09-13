@@ -39,6 +39,11 @@ void buzzoff_state_advance(buzzoff_state_t *state)
     }
 }
 
+void buzzoff_state_advance_render_frame(buzzoff_state_t *state, bool was_running)
+{
+    if (was_running && state->running) buzzoff_state_advance(state);
+}
+
 bool buzzoff_croak_due(const buzzoff_state_t *state)
 {
     return state->running && state->tick == 16U && state->running_eaten != 0U &&
