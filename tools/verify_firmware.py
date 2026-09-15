@@ -117,7 +117,7 @@ def verify_protected_layout(merged: bytes, build_dir: Path) -> None:
 
 def main() -> int:
     build_dir = Path(sys.argv[1] if len(sys.argv) > 1 else "build").resolve()
-    merged_path = build_dir / "FoloToy-AI-Passport-full.bin"
+    merged_path = build_dir / "folotoy-ai-passport-buzzoff.bin"
     flash_args_path = build_dir / "flash_args"
 
     if not merged_path.is_file() or not flash_args_path.is_file():

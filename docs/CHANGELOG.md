@@ -6,6 +6,14 @@
 
 ## Unreleased
 
+- Added a fork-owned bilingual root README for Buzz Off, replacing the generic GitHub landing page with the app overview, controls, firmware name, and all five community illustrations.
+
+- Completed the five-image Buzz Off community illustration set: the existing cover plus boot, standby, catch, and croak gallery art. All gallery images are labeled illustrations, not device screenshots; they have not been added to the pending community submission.
+
+- Added an original 3:4 gameplay illustration for the Buzz Off community cover, clearly identified as illustrative rather than a device screenshot.
+
+- Renamed the verified, flashable Buzz Off firmware artifact to `folotoy-ai-passport-buzzoff.bin` across local builds, CI, releases, and flashing instructions. The ESP-IDF app-only image keeps its original name.
+
 - Hid the mosquito and red tongue in Buzz Off standby and immediately after stopping. Catch animation and score now advance only while RUNNING; restarting begins at the first animation frame.
 
 - Added an approximately one-second, public-domain USGS American bullfrog recording during RUNNING on every second mosquito catch. The active PCM tone is ducked and codec volume rises from 35 to 55 only during the call, then returns to 35; the call stops with the feature, and standby music is unchanged. Added host tests and an audible preview.

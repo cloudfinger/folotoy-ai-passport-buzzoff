@@ -21,6 +21,10 @@ Store reusable font files and generated font sources in `fonts/`.
 
 Store reusable source images and generated display assets in `images/`.
 
+- `images/buzzoff-community-cover-illustration.png` is a project-original AI-generated 3:4 gameplay illustration for the FoloToy community listing, based on the existing frog and wetland art. It depicts a representative mosquito catch, not a device screenshot or measured result.
+
+- `images/buzzoff-gallery-boot-illustration.png`, `images/buzzoff-gallery-standby-illustration.png`, `images/buzzoff-gallery-catch-illustration.png`, and `images/buzzoff-gallery-croak-illustration.png` are four project-original AI-generated 3:4 community gallery illustrations. They use the existing Buzz Off frog, wetland art, and cover as visual references, without third-party images. They depict the boot reveal, mosquito-free standby, active catch, and bullfrog-call moment respectively; they are representative art, not device screenshots. Upload them as optional gallery images alongside the cover when a new submission revision is authorized.
+
 - `images/buzzoff-frog-source.png` and `images/buzzoff-frog-open-source.png` are the generated closed/open-mouth frog sources, with corresponding `168x172` transparent previews. `images/buzzoff-scene-source.png` is the generated wetland backdrop, with a `240x179` preview. All derive from the creator-selected Buzz Off concept and are project-original AI-generated material; no third-party images were used. Pillow is needed only to regenerate their Flash-resident LVGL I4 (16-color indexed) C sources:
 
   ```bash

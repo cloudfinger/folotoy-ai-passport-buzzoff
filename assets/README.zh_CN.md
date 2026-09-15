@@ -19,6 +19,10 @@
 
 可复用的源图与生成的显示资产放在 `images/`。
 
+- `images/buzzoff-community-cover-illustration.png` 是参考现有青蛙与湿地美术生成的项目原创 3:4 社区封面，展示捕蚊玩法的示意画面，不是实机截图或效果实测。
+
+- `images/buzzoff-gallery-boot-illustration.png`、`images/buzzoff-gallery-standby-illustration.png`、`images/buzzoff-gallery-catch-illustration.png` 和 `images/buzzoff-gallery-croak-illustration.png` 是四张项目原创 AI 生成的 3:4 社区玩法图，以现有 Buzz Off 青蛙、湿地美术及封面作视觉参考，没有使用第三方图片。它们分别展示开机揭幕、无蚊子的待机、运行中捕蚊和牛蛙叫声时刻；均为示意插画，不是实机截图。取得新版本提交授权后，可与封面一起作为额外玩法图上传。
+
 - `images/buzzoff-frog-source.png` 与 `images/buzzoff-frog-open-source.png` 是生成的青蛙闭嘴／张嘴源图，分别配有 `168x172` 透明预览图；`images/buzzoff-scene-source.png` 是生成的湿地背景，配有 `240x179` 预览图。全部取材于创作者选定的 Buzz Off 设计概念，均为项目原创 AI 生成素材，未使用第三方图片。只有重新生成存放于 Flash 的 LVGL I4（16 色索引）图片源码时才需要 Pillow：
 
   ```bash
